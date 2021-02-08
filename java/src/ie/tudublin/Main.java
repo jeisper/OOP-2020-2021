@@ -1,9 +1,7 @@
 package ie.tudublin;
 
-public class Main
-{
-    public void catsAndDogs()
-    {
+public class Main {
+    public void catsAndDogs() {
         System.out.println("Hello world");
 
         Animal misty = new Dog("Misty");
@@ -23,42 +21,54 @@ public class Main
         // What will get printed out??
 
         // 1. topcat, Garfield
-        // 2. garfield, Garfield 
+        // 2. garfield, Garfield
 
         Cat ginger = new Cat("Ginger");
-        while(ginger.getNumLives() > 0)
-        {
+        while (ginger.getNumLives() > 0) {
             ginger.kill();
         }
         ginger.kill();
     }
 
-    public void helloProcessing1()
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new HelloProcessing1());
+    public void helloProcessing1() {
+        String[] a = { "MAIN" };
+        processing.core.PApplet.runSketch(a, new HelloProcessing1());
     }
 
     // public void helloProcessing2()
     // {
-    //     String[] a = {"MAIN"};
-    //     processing.core.PApplet.runSketch( a, new HelloProcessing2());
+    // String[] a = {"MAIN"};
+    // processing.core.PApplet.runSketch( a, new HelloProcessing2());
     // }
 
     // public static void main(String[] args)
     // {
-    //     Main main = new Main();
-    //     main.helloProcessing2();
+    // Main main = new Main();
+    // main.helloProcessing2();
     // }
 
-    public void bugZap()
-        {
-            String[] a = {"MAIN"};
-            processing.core.PApplet.runSketch(a, new BugZap());
-        }
-        public static void main(String[] args)
-        {
-            Main main = new Main();
-            main.bugZap();
-        }
-} 
+    public void bugZap() {
+        String[] a = { "MAIN" };
+        processing.core.PApplet.runSketch(a, new BugZap());
+    }
+
+    public static void main(String[] args) {
+        Main main = new Main();
+        main.bugZap();
+    }
+
+    public void bugZap() {
+        String[] a = { "MAIN" };
+        processing.core.PApplet.runSketch(a, new BugZap());
+    }
+
+    public void loops() {
+        String[] a = { "MAIN" };
+        processing.core.PApplet.runSketch(a, new Loops());
+    }
+
+    public static void main(String[] args) {
+        Main main = new Main();
+        main.loops();
+    }
+}
