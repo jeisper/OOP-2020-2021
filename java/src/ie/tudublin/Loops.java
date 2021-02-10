@@ -7,7 +7,7 @@ public class Loops extends PApplet {
     public void settings() {
         size(500, 500);
         cx = width / 2;
-        cy = height / 2;        
+        cy = height / 2;
     }
 
     int mode = 0;
@@ -16,7 +16,7 @@ public class Loops extends PApplet {
     float cy;
 
     public void keyPressed() {
-        // the value of mode will be the number of the 
+        // the value of mode will be the number of the
         // number key pressed
         if (keyCode >= '0' && keyCode <= '9')
             mode = keyCode - '0';
@@ -28,10 +28,47 @@ public class Loops extends PApplet {
 
     public void draw() {
         background(0);
-        switch (mode)
-        {
-            case 0:
+        switch (mode) {
+            case 0: {
+                fill(50, 255, 255);
                 ellipse(cx, cy, 100, 100);
+            }
+                break;
+
+            case 1: {
+                fill(50, 255, 255);
+                if (mouseX < cx && mouseY < cy) {
+                    rect(0, 0, cx, cy);
+                } else if (mouseX > cx && mouseY < cy) {
+                    rect(cx, 0, cy, cy);
+                } else if (mouseX < cx && mouseY > cy) {
+                    rect(0, cy, cx, cy);
+                } else {
+                    rect(cy, cy, cx, cy);
+                }
+            }
+                break;
+
+            case 2: {
+                int numRects = (int) (mouseX / 10.0f);
+                float w = width / (float) numRects;
+                float cgap = 255 / (float) numRects;
+                for (int i = 0; i < numRects; i++) {
+                    fill(i * cgap, 255, 255);
+                    rect(1 * w, 0, w, height);
+                }
+            }
+                break;
+
+            case 3: {
+                int numCircles = (int) (mouseX / 10.0f);
+                float w = width / (float) numCircles;
+                float cgap = 255 / (float) numCircles;
+                for (int i = 0; i < numCircles; i++) {
+                    fill(cgap * 1, 255, 255);
+                    ellipse(w / 2 + (i * w), cy, w, w);
+                }
+            }
                 break;
         }
     }
